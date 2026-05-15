@@ -10,7 +10,6 @@ import Standings from '@/routes/Standings'
 import Bonus from '@/routes/Bonus'
 import Profile from '@/routes/Profile'
 import Login from '@/routes/Login'
-import Signup from '@/routes/Signup'
 import AdminMatches from '@/routes/admin/AdminMatches'
 import AdminMatchEdit from '@/routes/admin/AdminMatchEdit'
 
@@ -36,7 +35,6 @@ export default function App() {
       <Route element={<GuestRoute />}>
         <Route element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />

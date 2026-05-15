@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -112,16 +112,6 @@ export default function Login() {
             {submitting ? 'Pegando cromo…' : 'Pegar cromo →'}
           </Button>
         </form>
-
-        <div className="mt-6 pt-4 border-t-2 border-dashed border-[var(--ink)]/30 text-center text-xs text-[var(--ink-soft)]">
-          ¿Primer cromo?{' '}
-          <Link
-            to="/signup"
-            className="font-black uppercase tracking-wider underline decoration-2 underline-offset-4 text-foreground"
-          >
-            Regístrate
-          </Link>
-        </div>
       </div>
     </div>
   )
