@@ -76,10 +76,13 @@ export function ProfileEditCard({ profile }: { profile: Profile }) {
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
         <div className="flex items-center gap-4 rounded-xl border-2 border-dashed border-[var(--ink)]/30 p-3">
           <Avatar className="h-14 w-14 border-2 border-[var(--ink)]">
-            <AvatarImage src={previewUrl || undefined} alt="" />
-            <AvatarFallback className="text-sm font-black bg-accent text-foreground">
-              {previewInitials}
-            </AvatarFallback>
+            {previewUrl ? (
+              <AvatarImage src={previewUrl} alt="" />
+            ) : (
+              <AvatarFallback className="text-sm font-black bg-accent text-foreground">
+                {previewInitials}
+              </AvatarFallback>
+            )}
           </Avatar>
           <div className="flex flex-col gap-0.5">
             <p className="panini-eyebrow">Vista previa</p>

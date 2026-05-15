@@ -55,10 +55,13 @@ function RankRow({
       )}
       <RankBadge rank={rank} />
       <Avatar className="h-10 w-10 border-2 border-[var(--ink)]">
-        <AvatarImage src={row.avatar_url ?? undefined} alt="" />
-        <AvatarFallback className="text-xs font-black bg-accent text-foreground">
-          {initials}
-        </AvatarFallback>
+        {row.avatar_url ? (
+          <AvatarImage src={row.avatar_url} alt="" />
+        ) : (
+          <AvatarFallback className="text-xs font-black bg-accent text-foreground">
+            {initials}
+          </AvatarFallback>
+        )}
       </Avatar>
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-bold">{name}</div>

@@ -48,10 +48,13 @@ export default function Profile() {
         <div className="relative panini-card p-6 sm:p-7 shadow-xl">
           <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
             <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-2 border-[var(--ink)] shadow-[3px_3px_0_var(--ink)]">
-              <AvatarImage src={data?.avatar_url ?? undefined} alt="" />
-              <AvatarFallback className="text-2xl font-black bg-accent text-foreground">
-                {initials}
-              </AvatarFallback>
+              {data?.avatar_url ? (
+                <AvatarImage src={data.avatar_url} alt="" />
+              ) : (
+                <AvatarFallback className="text-2xl font-black bg-accent text-foreground">
+                  {initials}
+                </AvatarFallback>
+              )}
             </Avatar>
             <div className="min-w-0 flex-1">
               {profile.isLoading ? (
